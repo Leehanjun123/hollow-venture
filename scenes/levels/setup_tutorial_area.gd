@@ -23,8 +23,16 @@ func _ready():
 		# 카메라가 플레이어의 자식 노드로 있는지 확인
 		var camera = player.get_node_or_null("Camera2D2")
 		if camera:
+			# 카메라를 현재 카메라로 설정
+			camera.enabled = true
+			camera.make_current()
+			# 스무딩을 일시적으로 끄고 위치를 강제로 업데이트
+			var original_smoothing = camera.position_smoothing_enabled
+			camera.position_smoothing_enabled = false
+			await get_tree().process_frame
+			camera.position_smoothing_enabled = original_smoothing
 			camera.reset_smoothing()
-			print("✓ 카메라 스무딩 리셋")
+			print("✓ 카메라 위치 강제 업데이트 및 스무딩 리셋")
 	else:
 		print("⚠ Player 노드를 찾을 수 없습니다")
 
