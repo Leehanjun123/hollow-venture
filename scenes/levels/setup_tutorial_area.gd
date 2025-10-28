@@ -34,11 +34,9 @@ func _ready():
 			camera.reset_smoothing()
 			print("✓ 카메라 위치 강제 업데이트 및 스무딩 리셋")
 
-		# ParallaxBackground 스크롤 오프셋 설정
-		var parallax_bg = get_node_or_null("ParallaxBackground")
-		if parallax_bg:
-			parallax_bg.scroll_offset = spawn_position
-			print("✓ ParallaxBackground 스크롤 오프셋 설정: %s" % spawn_position)
+			# ParallaxBackground를 강제로 업데이트
+			await get_tree().process_frame
+			print("✓ ParallaxBackground 자동 업데이트 대기")
 	else:
 		print("⚠ Player 노드를 찾을 수 없습니다")
 

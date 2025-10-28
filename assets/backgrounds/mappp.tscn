@@ -17,6 +17,7 @@
 script = ExtResource("1_tutorial")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -4
