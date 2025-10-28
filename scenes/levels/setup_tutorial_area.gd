@@ -12,22 +12,20 @@ func _ready():
 	# 타일 좌표를 픽셀 좌표로 변환 (32픽셀 타일 기준)
 	var spawn_position = tutorial_spawn * 32
 
-	# PlayerSpawner 사용하여 플레이어 스폰
-	if PlayerSpawner:
-		PlayerSpawner.spawn_player(spawn_position, self)
-		print("✓ 플레이어 스폰: 타일 %s, 픽셀 %s" % [tutorial_spawn, spawn_position])
+	# Scene에 이미 있는 Player 노드 찾기
+	var player = get_node_or_null("Gameplay_Container/Player")
 
-		# 플레이어가 스폰된 후 카메라 위치 설정
-		await get_tree().process_frame
-		var player = PlayerSpawner.get_player()
-		if player:
-			# 카메라 찾기
-			var camera = get_viewport().get_camera_2d()
-			if camera:
-				camera.position = spawn_position
-				camera.reset_smoothing()
-				print("✓ 카메라 위치 설정: %s" % spawn_position)
+	if player:
+		# 플레이어 위치 설정
+		player.position = spawn_position
+		print("✓ 플레이어 위치 설정: 타일 %s, 픽셀 %s" % [tutorial_spawn, spawn_position])
+
+		# 카메라가 플레이어의 자식 노드로 있는지 확인
+		var camera = player.get_node_or_null("Camera2D2")
+		if camera:
+			camera.reset_smoothing()
+			print("✓ 카메라 스무딩 리셋")
 	else:
-		print("⚠ PlayerSpawner를 찾을 수 없습니다")
+		print("⚠ Player 노드를 찾을 수 없습니다")
 
 	print("=== 튜토리얼 지역 준비 완료 ===")

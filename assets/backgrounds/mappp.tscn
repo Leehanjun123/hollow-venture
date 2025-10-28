@@ -108,5 +108,4 @@ tile_set = ExtResource("3_sxom4")
 [node name="Player" parent="Gameplay_Container" instance=ExtResource("12_mc6aj")]
 
 [node name="Camera2D2" type="Camera2D" parent="Gameplay_Container/Player"]
-position = Vector2(-798, -983)
 position_smoothing_enabled = true
