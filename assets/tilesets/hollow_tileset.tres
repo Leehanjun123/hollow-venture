@@ -1,28 +1,22 @@
-[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://vbl5ga6gvlv5"]
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://vbl5ga6gvlv5"]
 
-[ext_resource type="Texture2D" uid="uid://ctbijlxj5b4sj" path="res://assets/tilesets/ground_tile.png" id="1_ground"]
-[ext_resource type="Texture2D" uid="uid://cqolhgetr47dj" path="res://assets/tilesets/wall_tile.png" id="2_wall"]
-[ext_resource type="Texture2D" uid="uid://clluyxs53exbn" path="res://assets/tilesets/platform.png" id="3_platform"]
 [ext_resource type="Texture2D" uid="uid://cmytg452oajoq" path="res://assets/tilesets/stalactite.png" id="4_stalactite"]
 [ext_resource type="Texture2D" uid="uid://dq1or8i682hac" path="res://assets/tilesets/crystal.png" id="5_crystal"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ground"]
 resource_name = "ground_tile"
-texture = ExtResource("1_ground")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wall"]
 resource_name = "wall_tile"
-texture = ExtResource("2_wall")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_platform"]
 resource_name = "platform"
-texture = ExtResource("3_platform")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -12, 16, -12, 16, -16, -16, -16)

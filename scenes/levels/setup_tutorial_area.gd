@@ -1,13 +1,13 @@
 extends Node2D
 
 ## 튜토리얼 지역 설정
-## 플레이어 스폰: (-842.0, -1452.0)
+## 플레이어 스폰: (-24, -31)
 
 func _ready():
 	print("=== 튜토리얼 지역 초기화 ===")
 
 	# 튜토리얼 지역 좌표에 플레이어 스폰
-	var tutorial_spawn = Vector2(-842.0, -1452.0)
+	var tutorial_spawn = Vector2(-24, -31)
 
 	# PlayerSpawner 사용하여 플레이어 스폰
 	if PlayerSpawner:
