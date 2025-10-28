@@ -23,7 +23,7 @@ z_index = -4
 motion_scale = Vector2(0, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer8"]
-position = Vector2(-768, -992)
+position = Vector2(-389.75003, -1205.25)
 scale = Vector2(0.48046866, 0.90716916)
 texture = ExtResource("2_sxom4")
 
@@ -33,7 +33,7 @@ motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
 modulate = Color(1, 1, 1, 0.5882353)
-position = Vector2(-768, -992)
+position = Vector2(-384, -1205)
 scale = Vector2(0.48854166, 0.90808827)
 texture = ExtResource("3_hc0sd")
 
@@ -43,33 +43,33 @@ motion_scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 modulate = Color(1, 1, 1, 0.78431374)
-position = Vector2(-668, -992)
+position = Vector2(-124, -1062)
 scale = Vector2(0.10154058, 0.08569336)
 texture = ExtResource("6_l5alb")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 modulate = Color(1, 1, 1, 0.78431374)
-position = Vector2(-868, -992)
+position = Vector2(-475.99997, -1066)
 scale = Vector2(0.057826918, 0.064080834)
 texture = ExtResource("4_86hwf")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2(-768, -920)
+position = Vector2(-254.88736, -1030.8746)
 scale = Vector2(0.10720189, 0.107667)
 texture = ExtResource("5_6iohx")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2(-968, -992)
+position = Vector2(-755, -1041.0001)
 scale = Vector2(0.07885744, 0.07617193)
 texture = ExtResource("4_86hwf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2(-568, -992)
+position = Vector2(-675, -1002)
 scale = Vector2(0.07299801, 0.10424799)
 texture = ExtResource("5_6iohx")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
-position = Vector2(-468, -992)
+position = Vector2(-540, -998)
 scale = Vector2(0.06054687, 0.058593746)
 texture = ExtResource("6_l5alb")
 
@@ -78,12 +78,12 @@ z_index = -1
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-position = Vector2(-768, -992)
+position = Vector2(-394, -1040)
 scale = Vector2(0.10656738, 0.13195805)
 texture = ExtResource("7_l5alb")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
-position = Vector2(-568, -992)
+position = Vector2(-76.00009, -1032)
 scale = Vector2(0.09460451, 0.12658693)
 texture = ExtResource("8_mc6aj")
 
