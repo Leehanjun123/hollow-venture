@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/forgotten_crossroads/room_03_crawlid_nest.tscn" id="1_room"]
+
+[node name="TestRoom03" type="Node2D"]
+
+[node name="Room03_CrawlidNest" parent="." instance=ExtResource("1_room")]

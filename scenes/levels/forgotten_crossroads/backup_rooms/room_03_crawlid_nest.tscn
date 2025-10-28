@@ -1,0 +1,192 @@
+[gd_scene load_steps=17 format=3 uid="uid://b1egpw02mom2g"]
+
+[ext_resource type="TileSet" uid="uid://bh0q5low2cy7p" path="res://assets/tilesets/blockout_tileset.tres" id="1_tileset"]
+[ext_resource type="Script" uid="uid://c10oxuilkrm1a" path="res://scenes/levels/forgotten_crossroads/room_03_blockout.gd" id="2_script"]
+[ext_resource type="PackedScene" uid="uid://crawlid001" path="res://scenes/enemies/crawlid.tscn" id="3_crawlid"]
+[ext_resource type="PackedScene" uid="uid://gru00er001" path="res://scenes/enemies/gruzzer.tscn" id="4_gruzzer"]
+[ext_resource type="Texture2D" uid="uid://c2l1tmnbm4ifw" path="res://assets/references/hallownest_full.png" id="4_svx3l"]
+[ext_resource type="Texture2D" uid="uid://dtuotnw2g6l7r" path="res://assets/backgrounds/forgotten_crossroads/layer_1_far.png" id="5_layer1"]
+[ext_resource type="Texture2D" uid="uid://dfbis17wt72fi" path="res://assets/backgrounds/forgotten_crossroads/layer_2_mid.png" id="6_layer2"]
+[ext_resource type="Texture2D" uid="uid://disiowll2cw6y" path="res://assets/backgrounds/forgotten_crossroads/layer_3_near.png" id="7_layer3"]
+[ext_resource type="Texture2D" uid="uid://c2s2atlf6unrv" path="res://assets/backgrounds/forgotten_crossroads/layer_4_fog.png" id="8_layer4"]
+[ext_resource type="Texture2D" uid="uid://c1jjq2ew7fjfy" path="res://assets/lighting/glow_large.png" id="9_glow_large"]
+[ext_resource type="Texture2D" uid="uid://bb7gp3h1a0kxi" path="res://assets/lighting/glow_medium.png" id="10_glow_medium"]
+[ext_resource type="Texture2D" uid="uid://ydciutfwprf4" path="res://assets/lighting/glow_crystal.png" id="11_glow_crystal"]
+[ext_resource type="Texture2D" uid="uid://ck0232y1x5cap" path="res://assets/lighting/glow_small.png" id="12_glow_small"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ui.tscn" id="13_ui"]
+[ext_resource type="Script" uid="uid://b5ryhgeah5clq" path="res://scripts/camera/camera_controller.gd" id="14_camera"]
+[ext_resource type="PackedScene" uid="uid://u8x8k2ftcchh" path="res://scenes/levels/room_transition.tscn" id="15_transition"]
+
+[node name="Room03_CrawlidNest" type="Node2D"]
+script = ExtResource("2_script")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.6, 0.65, 0.7, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer1_Far" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer1_Far"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("5_layer1")
+
+[node name="Layer2_Mid" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer2_Mid"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("6_layer2")
+
+[node name="ForgottenCrossroadsFull" type="Node2D" parent="ParallaxBackground/Layer2_Mid/Sprite2D"]
+
+[node name="ReferenceImage" type="Sprite2D" parent="ParallaxBackground/Layer2_Mid/Sprite2D/ForgottenCrossroadsFull"]
+modulate = Color(1, 1, 1, 0.5019608)
+z_index = -10
+texture = ExtResource("4_svx3l")
+
+[node name="TileMap" type="TileMapLayer" parent="ParallaxBackground/Layer2_Mid/Sprite2D/ForgottenCrossroadsFull"]
+tile_set = ExtResource("1_tileset")
+
+[node name="Camera2D" type="Camera2D" parent="ParallaxBackground/Layer2_Mid/Sprite2D/ForgottenCrossroadsFull"]
+
+[node name="Layer3_Near" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3_Near"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("7_layer3")
+
+[node name="Layer4_Fog" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.15)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer4_Fog"]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("8_layer4")
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_tileset")
+
+[node name="Lighting" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="BackgroundGlow1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.4)
+texture_filter = 1
+position = Vector2(200, 300)
+texture = ExtResource("9_glow_large")
+
+[node name="BackgroundGlow2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.3)
+texture_filter = 1
+position = Vector2(800, 400)
+texture = ExtResource("9_glow_large")
+
+[node name="CrystalLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.7)
+texture_filter = 1
+position = Vector2(300, 200)
+texture = ExtResource("11_glow_crystal")
+
+[node name="CrystalLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 1
+position = Vector2(900, 500)
+texture = ExtResource("11_glow_crystal")
+
+[node name="PointLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.5)
+texture_filter = 1
+position = Vector2(450, 350)
+texture = ExtResource("10_glow_medium")
+
+[node name="PointLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.4)
+texture_filter = 1
+position = Vector2(650, 250)
+texture = ExtResource("10_glow_medium")
+
+[node name="SmallLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.8)
+texture_filter = 1
+position = Vector2(150, 450)
+texture = ExtResource("12_glow_small")
+
+[node name="SmallLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.7)
+texture_filter = 1
+position = Vector2(1000, 300)
+texture = ExtResource("12_glow_small")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 384)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("14_camera")
+
+[node name="DefaultSpawn" type="Marker2D" parent="."]
+position = Vector2(128, 640)
+
+[node name="LeftEntrance" type="Marker2D" parent="."]
+position = Vector2(64, 640)
+
+[node name="RightExit" type="Marker2D" parent="."]
+position = Vector2(1088, 640)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Crawlid1" parent="Enemies" instance=ExtResource("3_crawlid")]
+position = Vector2(256, 608)
+
+[node name="Crawlid2" parent="Enemies" instance=ExtResource("3_crawlid")]
+position = Vector2(512, 608)
+
+[node name="Crawlid3" parent="Enemies" instance=ExtResource("3_crawlid")]
+position = Vector2(768, 608)
+
+[node name="Gruzzer1" parent="Enemies" instance=ExtResource("4_gruzzer")]
+position = Vector2(384, 256)
+
+[node name="Gruzzer2" parent="Enemies" instance=ExtResource("4_gruzzer")]
+position = Vector2(640, 384)
+
+[node name="UI" parent="." instance=ExtResource("13_ui")]
+
+[node name="TransitionToRoom01" parent="." instance=ExtResource("15_transition")]
+position = Vector2(64, 640)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_01_kings_pass.tscn"
+target_spawn_point = "RightExit"
+
+[node name="TransitionToRoom02" parent="." instance=ExtResource("15_transition")]
+position = Vector2(576, 64)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_02_crossroads_hub.tscn"
+target_spawn_point = "BottomExit"
+
+[node name="TransitionToRoom04" parent="." instance=ExtResource("15_transition")]
+position = Vector2(1088, 640)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_04_ancient_bench.tscn"
+target_spawn_point = "LeftEntrance"
+
+[node name="TransitionToRoom05" parent="." instance=ExtResource("15_transition")]
+position = Vector2(256, 128)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_05_tiktik_den.tscn"
+target_spawn_point = "RightExit"
+
+[node name="TransitionToRoom06" parent="." instance=ExtResource("15_transition")]
+position = Vector2(896, 128)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_06_millipede_lair.tscn"
+target_spawn_point = "LeftEntrance"
+
+[node name="TransitionToRoom07" parent="." instance=ExtResource("15_transition")]
+position = Vector2(320, 704)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_07_mothwing_shrine.tscn"
+target_spawn_point = "LeftEntrance"

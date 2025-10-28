@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8xwalhwjk"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_ui.gd" id="1_ui_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soul_bg"]
+bg_color = Color(0.2, 0.2, 0.2, 0.8)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soul_fill"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="GameUI" type="CanvasLayer"]
+script = ExtResource("1_ui_script")
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 400.0
+offset_bottom = 80.0
+theme_override_constants/separation = 8
+
+[node name="SoulGauge" type="ProgressBar" parent="."]
+offset_left = 40.0
+offset_top = 90.0
+offset_right = 140.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_soul_bg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_soul_fill")
+max_value = 100.0
+value = 50.0
+show_percentage = false
+
+[node name="GeoContainer" type="HBoxContainer" parent="."]
+offset_left = 1020.0
+offset_top = 40.0
+offset_right = 1120.0
+offset_bottom = 70.0
+theme_override_constants/separation = 8
+
+[node name="GeoIcon" type="Label" parent="GeoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 20
+text = "◆"
+
+[node name="GeoAmount" type="Label" parent="GeoContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="BossHealthBar" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 340.0
+offset_top = 30.0
+offset_right = 820.0
+offset_bottom = 60.0
+
+[node name="BossNameLabel" type="Label" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 0.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Guardian of the Tribe"
+horizontal_alignment = 1
+
+[node name="BossHP" type="ProgressBar" parent="BossHealthBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+max_value = 300.0
+value = 300.0
+show_percentage = false

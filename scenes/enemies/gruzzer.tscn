@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://gru00er001"]
+
+[ext_resource type="Script" path="res://scripts/enemies/gruzzer.gd" id="1_script"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gruzzer"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"charge",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stunned",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gruzzer"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_detection"]
+radius = 250.0
+
+[node name="Gruzzer" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_gruzzer")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gruzzer")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="DetectionShape" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_detection")

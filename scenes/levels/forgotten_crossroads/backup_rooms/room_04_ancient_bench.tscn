@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=3]
+
+[ext_resource type="TileSet" path="res://assets/tilesets/blockout_tileset.tres" id="1_tileset"]
+[ext_resource type="Script" path="res://scenes/levels/forgotten_crossroads/room_04_blockout.gd" id="2_script"]
+[ext_resource type="Script" path="res://scripts/camera/camera_controller.gd" id="3_camera"]
+[ext_resource type="PackedScene" path="res://scenes/levels/room_transition.tscn" id="4_transition"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/forgotten_crossroads/layer_1_far.png" id="5_layer1"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/forgotten_crossroads/layer_2_mid.png" id="6_layer2"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/forgotten_crossroads/layer_3_near.png" id="7_layer3"]
+[ext_resource type="Texture2D" path="res://assets/backgrounds/forgotten_crossroads/layer_4_fog.png" id="8_layer4"]
+[ext_resource type="Texture2D" path="res://assets/lighting/glow_large.png" id="9_glow_large"]
+[ext_resource type="Texture2D" path="res://assets/lighting/glow_medium.png" id="10_glow_medium"]
+[ext_resource type="Texture2D" path="res://assets/lighting/glow_small.png" id="11_glow_small"]
+[ext_resource type="Texture2D" path="res://assets/lighting/glow_crystal.png" id="12_glow_crystal"]
+[ext_resource type="PackedScene" path="res://scenes/ui/ui.tscn" id="13_ui"]
+
+[node name="Room04_AncientBench" type="Node2D"]
+script = ExtResource("2_script")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.75, 0.78, 0.82, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer1_Far" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer1_Far"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("5_layer1")
+
+[node name="Layer2_Mid" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer2_Mid"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("6_layer2")
+
+[node name="Layer3_Near" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer3_Near"]
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("7_layer3")
+
+[node name="Layer4_Fog" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.15)
+motion_mirroring = Vector2(1920, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Layer4_Fog"]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 2
+position = Vector2(960, 540)
+texture = ExtResource("8_layer4")
+
+[node name="TileMap" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_tileset")
+format = 2
+
+[node name="Lighting" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="AmbientGlow1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.5)
+texture_filter = 1
+position = Vector2(300, 320)
+texture = ExtResource("9_glow_large")
+blend_mode = 1
+
+[node name="AmbientGlow2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.5)
+texture_filter = 1
+position = Vector2(600, 320)
+texture = ExtResource("9_glow_large")
+blend_mode = 1
+
+[node name="BenchGlow" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 0.95, 0.8, 0.7)
+texture_filter = 1
+position = Vector2(384, 480)
+texture = ExtResource("9_glow_large")
+blend_mode = 1
+
+[node name="CrystalLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 0.9, 0.6, 0.8)
+texture_filter = 1
+position = Vector2(250, 200)
+texture = ExtResource("12_glow_crystal")
+blend_mode = 1
+
+[node name="CrystalLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 0.9, 0.6, 0.7)
+texture_filter = 1
+position = Vector2(650, 200)
+texture = ExtResource("12_glow_crystal")
+blend_mode = 1
+
+[node name="PointLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.7)
+texture_filter = 1
+position = Vector2(150, 300)
+texture = ExtResource("10_glow_medium")
+blend_mode = 1
+
+[node name="PointLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.7)
+texture_filter = 1
+position = Vector2(750, 300)
+texture = ExtResource("10_glow_medium")
+blend_mode = 1
+
+[node name="PointLight3" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.6)
+texture_filter = 1
+position = Vector2(448, 150)
+texture = ExtResource("10_glow_medium")
+blend_mode = 1
+
+[node name="SmallLight1" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.8)
+texture_filter = 1
+position = Vector2(200, 450)
+texture = ExtResource("11_glow_small")
+blend_mode = 1
+
+[node name="SmallLight2" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.8)
+texture_filter = 1
+position = Vector2(700, 450)
+texture = ExtResource("11_glow_small")
+blend_mode = 1
+
+[node name="SmallLight3" type="Sprite2D" parent="Lighting"]
+modulate = Color(1, 1, 1, 0.7)
+texture_filter = 1
+position = Vector2(450, 500)
+texture = ExtResource("11_glow_small")
+blend_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(448, 320)
+zoom = Vector2(1.5, 1.5)
+script = ExtResource("3_camera")
+
+[node name="DefaultSpawn" type="Marker2D" parent="."]
+position = Vector2(448, 576)
+
+[node name="LeftEntrance" type="Marker2D" parent="."]
+position = Vector2(128, 576)
+
+[node name="BenchPosition" type="Marker2D" parent="."]
+position = Vector2(384, 576)
+
+[node name="RightExit" type="Marker2D" parent="."]
+position = Vector2(832, 576)
+
+[node name="TransitionToRoom03" parent="." instance=ExtResource("4_transition")]
+position = Vector2(64, 576)
+target_scene = "res://scenes/levels/forgotten_crossroads/room_03_crawlid_nest.tscn"
+target_spawn_point = "RightExit"
+prompt_text = "Enter"
+
+[node name="UI" parent="." instance=ExtResource("13_ui")]

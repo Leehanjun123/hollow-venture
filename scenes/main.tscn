@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnjt4hdkamkkp"]
+
+[ext_resource type="PackedScene" uid="uid://bsxn3xv8lgwwj" path="res://scenes/player/player.tscn" id="1_player_scene"]
+[ext_resource type="Texture2D" uid="uid://jvhptf837i0n" path="res://icon.svg" id="2_icon"]
+[ext_resource type="PackedScene" uid="uid://cbp6sxv8lgwwj" path="res://scenes/enemy/enemy.tscn" id="3_enemy_scene"]
+[ext_resource type="PackedScene" uid="uid://dxp7sywamhwwj" path="res://scenes/enemy/flying_enemy.tscn" id="4_flying_enemy"]
+[ext_resource type="PackedScene" uid="uid://dtb9xwalhwjk" path="res://scenes/enemy/rock_beetle.tscn" id="4_rock_beetle"]
+[ext_resource type="PackedScene" uid="uid://dpb8xwalhwjk" path="res://scenes/bosses/centipede_boss.tscn" id="5_centipede_boss"]
+[ext_resource type="PackedScene" uid="uid://bpnaxwalhwjk" path="res://scenes/bosses/plains_mantis.tscn" id="5_mantis"]
+[ext_resource type="PackedScene" uid="uid://c8xwalhwjk" path="res://scenes/ui/game_ui.tscn" id="6_game_ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(2000, 64)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_player_scene")]
+position = Vector2(200, 400)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy1" parent="Enemies" instance=ExtResource("3_enemy_scene")]
+position = Vector2(500, 550)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("3_enemy_scene")]
+position = Vector2(400, 350)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("3_enemy_scene")]
+position = Vector2(700, 200)
+
+[node name="FlyingEnemy1" parent="Enemies" instance=ExtResource("4_flying_enemy")]
+position = Vector2(600, 300)
+
+[node name="FlyingEnemy2" parent="Enemies" instance=ExtResource("4_flying_enemy")]
+position = Vector2(300, 250)
+
+[node name="PlainsMantis" parent="Enemies" instance=ExtResource("5_mantis")]
+position = Vector2(750, 550)
+
+[node name="CentipedeBoss" parent="Enemies" instance=ExtResource("5_centipede_boss")]
+position = Vector2(900, 550)
+
+[node name="RockBeetle1" parent="Enemies" instance=ExtResource("4_rock_beetle")]
+position = Vector2(600, 550)
+
+[node name="RockBeetle2" parent="Enemies" instance=ExtResource("4_rock_beetle")]
+position = Vector2(350, 360)
+
+[node name="Environment" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="Environment"]
+position = Vector2(0, 600)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Floor"]
+modulate = Color(0.5, 0.5, 0.5, 1)
+scale = Vector2(15.625, 0.5)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="Platform1" type="StaticBody2D" parent="Environment"]
+position = Vector2(400, 400)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform1"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+scale = Vector2(2, 0.5)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform1"]
+shape = SubResource("RectangleShape2D_floor")
+one_way_collision = true
+
+[node name="Platform2" type="StaticBody2D" parent="Environment"]
+position = Vector2(700, 250)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform2"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+scale = Vector2(2, 0.5)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform2"]
+shape = SubResource("RectangleShape2D_floor")
+one_way_collision = true
+
+[node name="Platform3" type="StaticBody2D" parent="Environment"]
+position = Vector2(1000, 450)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Platform3"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+scale = Vector2(2, 0.5)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Platform3"]
+shape = SubResource("RectangleShape2D_floor")
+one_way_collision = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.2, 0.2, 0.3, 1)
+
+[node name="GameUI" parent="." instance=ExtResource("6_game_ui")]

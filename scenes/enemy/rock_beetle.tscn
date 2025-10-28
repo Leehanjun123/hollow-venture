@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtb9xwalhwjk"]
+
+[ext_resource type="Script" path="res://scripts/rock_beetle.gd" id="1_rock_beetle_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/rock_beetle.png" id="2_beetle_sprite"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(60, 40)
+
+[node name="RockBeetle" type="CharacterBody2D" groups=["enemy"]]
+z_index = 1
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_rock_beetle_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.0, 1.0, 1.0, 1)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_beetle_sprite")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")

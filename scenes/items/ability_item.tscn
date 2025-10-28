@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cab9xwalhwjk"]
+
+[ext_resource type="Script" path="res://scripts/ability_item.gd" id="1_ability_script"]
+[ext_resource type="Texture2D" uid="uid://jvhptf837i0n" path="res://icon.svg" id="2_icon"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1"]
+radius = 30.0
+
+[node name="AbilityItem" type="Area2D" groups=["ability_item"]]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_ability_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.8, 0.8, 1, 1)
+scale = Vector2(0.46875, 0.46875)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1")

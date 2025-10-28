@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://crawlid001"]
+
+[ext_resource type="Script" path="res://scripts/enemies/crawlid.gd" id="1_script"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crawlid"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crawlid"]
+size = Vector2(60, 30)
+
+[node name="Crawlid" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+script = ExtResource("1_script")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_crawlid")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_crawlid")
+
+[node name="WallDetectorRight" type="RayCast2D" parent="."]
+position = Vector2(30, 0)
+target_position = Vector2(8, 0)
+collision_mask = 1
+
+[node name="WallDetectorLeft" type="RayCast2D" parent="."]
+position = Vector2(-30, 0)
+target_position = Vector2(-8, 0)
+collision_mask = 1
+
+[node name="FloorDetectorRight" type="RayCast2D" parent="."]
+position = Vector2(32, 0)
+target_position = Vector2(0, 20)
+collision_mask = 1
+
+[node name="FloorDetectorLeft" type="RayCast2D" parent="."]
+position = Vector2(-32, 0)
+target_position = Vector2(0, 20)
+collision_mask = 1

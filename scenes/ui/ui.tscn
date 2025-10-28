@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/ui.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/ui/soul_vessel_outline.png" id="2_vessel"]
+[ext_resource type="Texture2D" path="res://assets/ui/soul_fill.png" id="3_fill"]
+
+[node name="UI" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_script")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 300.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="MasksContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+
+[node name="SoulContainer" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(48, 128)
+layout_mode = 2
+
+[node name="SoulVesselOutline" type="Sprite2D" parent="MarginContainer/VBoxContainer/SoulContainer"]
+texture_filter = 1
+position = Vector2(24, 64)
+texture = ExtResource("2_vessel")
+
+[node name="SoulFill" type="Sprite2D" parent="MarginContainer/VBoxContainer/SoulContainer/SoulVesselOutline"]
+modulate = Color(1, 1, 1, 0.8)
+texture_filter = 1
+texture = ExtResource("3_fill")
+offset = Vector2(0, 32)

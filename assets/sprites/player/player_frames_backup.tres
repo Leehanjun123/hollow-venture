@@ -1,0 +1,231 @@
+[gd_resource type="SpriteFrames" load_steps=42 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_001.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_002.png" id="1_idle_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_003.png" id="1_idle_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_004.png" id="1_idle_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_005.png" id="1_idle_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/idle/idle_frame_006.png" id="1_idle_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_001.png" id="2_walk_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_002.png" id="2_walk_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_003.png" id="2_walk_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_004.png" id="2_walk_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_005.png" id="2_walk_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_006.png" id="2_walk_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_007.png" id="2_walk_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_008.png" id="2_walk_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_009.png" id="2_walk_9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_010.png" id="2_walk_10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_011.png" id="2_walk_11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/walk/walk_frame_012.png" id="2_walk_12"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_001.png" id="3_jump_1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_002.png" id="3_jump_2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_003.png" id="3_jump_3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_004.png" id="3_jump_4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_005.png" id="3_jump_5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_006.png" id="3_jump_6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_007.png" id="3_jump_7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/jump/jump_frame_008.png" id="3_jump_8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/attack/attack_1.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/attack/attack_2.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/human/dodge/dodge_1.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/idle/idle_1.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/walk/walk_1.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/walk/walk_2.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/jump/jump_1.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/attack/attack_1.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/attack/attack_2.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/animations/evil/dodge/dodge_1.png" id="14"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_idle_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_idle_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_idle_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_idle_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_idle_6")
+}],
+"loop": true,
+"name": &"human_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_walk_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_walk_12")
+}],
+"loop": true,
+"name": &"human_walk",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jump_1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jump_8")
+}],
+"loop": false,
+"name": &"human_jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jump_6")
+}],
+"loop": false,
+"name": &"human_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": false,
+"name": &"human_attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": false,
+"name": &"human_dodge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": false,
+"name": &"human_hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"evil_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"evil_walk",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": false,
+"name": &"evil_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": false,
+"name": &"evil_fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": false,
+"name": &"evil_attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": false,
+"name": &"evil_dodge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": false,
+"name": &"evil_hurt",
+"speed": 5.0
+}]

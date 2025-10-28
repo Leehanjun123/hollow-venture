@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://u8x8k2ftcchh"]
+
+[ext_resource type="Script" uid="uid://ccf26i8epr0bg" path="res://scripts/levels/room_transition.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://nd23u8yvanol" path="res://assets/props/door_transition.png" id="2_door"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(64, 128)
+
+[node name="RoomTransition" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1")
+
+[node name="DoorSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 1)
+texture = ExtResource("2_door")
+
+[node name="DebugVisual" type="ColorRect" parent="."]
+visible = false
+offset_left = -32.0
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = 64.0
+color = Color(0, 1, 0, 0.3)

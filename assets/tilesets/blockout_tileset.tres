@@ -1,0 +1,25 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bh0q5low2cy7p"]
+
+[ext_resource type="Texture2D" uid="uid://s6w1bw7rt750" path="res://assets/tilesets/blockout/solid_64.png" id="1_solid"]
+[ext_resource type="Texture2D" uid="uid://betmbddyrmknd" path="res://assets/tilesets/blockout/platform_64.png" id="2_platform"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_solid"]
+resource_name = "solid_64"
+texture = ExtResource("1_solid")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_platform"]
+resource_name = "platform_64"
+texture = ExtResource("2_platform")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -28, 32, -28, 32, -32, -32, -32)
+0:0/0/physics_layer_0/polygon_0/one_way = true
+
+[resource]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_solid")
+sources/1 = SubResource("TileSetAtlasSource_platform")
