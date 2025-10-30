@@ -6,13 +6,16 @@ var camera: Camera2D = null
 var debug_counter = 0
 
 func _ready():
+	# scroll_offset을 0으로 초기화 (에디터 배치 기준)
+	scroll_offset = Vector2.ZERO
+
 	# 카메라 찾기
 	await get_tree().process_frame
 	camera = get_viewport().get_camera_2d()
 
 	print("=== ParallaxBackground 디버깅 ===")
 	print("ParallaxBackground visible: ", visible)
-	print("ParallaxBackground scroll_offset: ", scroll_offset)
+	print("ParallaxBackground scroll_offset (초기화 후): ", scroll_offset)
 	print("자식 레이어 수: ", get_child_count())
 
 	# 각 레이어 확인
