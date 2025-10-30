@@ -12,11 +12,13 @@
 [ext_resource type="Texture2D" uid="uid://cmmjlnu6hht4u" path="res://assets/backgrounds/Layer 5/Gemini_Generated_Image_cdyy91cdyy91cdyy.png" id="7_l5alb"]
 [ext_resource type="Texture2D" uid="uid://mvxkosbxqwgc" path="res://assets/backgrounds/Layer 5/Gemini_Generated_Image_g8h8byg8h8byg8h8.png" id="8_mc6aj"]
 [ext_resource type="PackedScene" uid="uid://bsxn3xv8lgwwj" path="res://scenes/player/player.tscn" id="12_mc6aj"]
+[ext_resource type="Script" path="res://scripts/parallax_background_follow.gd" id="13_parallax"]
 
 [node name="mappp" type="Node2D"]
 script = ExtResource("1_tutorial")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("13_parallax")
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
