@@ -19,7 +19,20 @@ func _ready():
 	for i in range(get_child_count()):
 		var layer = get_child(i)
 		if layer is ParallaxLayer:
-			print("  Layer %d: visible=%s, z_index=%d, 자식 수=%d" % [i, layer.visible, layer.z_index, layer.get_child_count()])
+			print("  Layer %d: visible=%s, z_index=%d, motion_scale=%s, 자식 수=%d" % [i, layer.visible, layer.z_index, layer.motion_scale, layer.get_child_count()])
+
+			# 레이어의 모든 스프라이트 확인
+			for j in range(layer.get_child_count()):
+				var sprite = layer.get_child(j)
+				if sprite is Sprite2D:
+					print("    Sprite %d: pos=%s, scale=%s, visible=%s, modulate=%s, texture=%s" % [
+						j,
+						sprite.position,
+						sprite.scale,
+						sprite.visible,
+						sprite.modulate,
+						"null" if sprite.texture == null else "loaded"
+					])
 
 	if camera:
 		print("✓ 카메라 감지됨: ", camera.global_position)
@@ -28,11 +41,6 @@ func _ready():
 	print("===============================")
 
 func _process(_delta):
-	if camera:
-		# 카메라의 전역 위치를 scroll_offset으로 설정
-		scroll_offset = camera.get_screen_center_position()
-
-		# 5초마다 한 번씩 디버그 정보 출력
-		debug_counter += 1
-		if debug_counter % 300 == 0:  # 60fps 기준 5초
-			print("[ParallaxBackground] scroll_offset: ", scroll_offset, " camera pos: ", camera.global_position)
+	# ParallaxBackground는 자동으로 카메라를 따라감
+	# scroll_offset을 수동으로 설정하면 안됨!
+	pass
